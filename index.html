@@ -1,22 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>UpswingOps</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, minimal-ui" />
+<title>UpswingOps</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1, minimal-ui" />
 
-  <!--
-  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-  <link rel="dns-prefetch" href="//code.jquery.com" />
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700'
+	rel='stylesheet' type='text/css'>
 
-  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700' rel='stylesheet' type='text/css'>
-  -->
-  <!--
-  <link rel="stylesheet" href="animate.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  -->
+<link rel="stylesheet" href="css/animate.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+
 </head>
 <body>
-  <p>UpswingOps webpage</p>
+
+	<header class="site__header island">
+		<div class="wrap">
+			<span id="logo" style="display: block;"><h1
+					class="site__title mega">UpswingOps</h1></span> <span id="motto"
+				class="beta subhead" style="display: block;">Tomorrow's
+				Solutions for Today's World</span>
+		</div>
+	</header>
+
+	<main class="site__content island" role="content">
+	<div class="wrap wrap_section">
+		<p style="text-align: justify;">The INTERNET is one of the most
+			productive inventions nowadays. It helps people to share huge volumes
+			of data around the world in milliseconds. Companies like ours help to
+			organize the Internet traffic. Our goal is to assist in the transfer
+			of such data in an optimal and fast way using cutting edge
+			technologies.</p>
+		<!--
+      <p class="meta"><a href="#" download="#">Project 1</a> | <a href="#">Project 2</a></p>
+      -->
+		<p>
+			<small><a href="#">LinkedIn</a> | <a href="#">GoldenLine</a>
+				| <a href="https://github.com/UpswingOps">Github</a></small>
+		</p>
+	</div>
+	</main>
+
+	<footer>
+		<hr />
+		<small><span id='footer_text'>-</span></small>
+	</footer>
 </body>
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<!--
+  <script src="js/jquery.parallax.min.js"></script>
+  <script src="js/parallax.min.js"></script>
+  -->
+
+<script>
+	function Anim(elementId, effect) {
+		$(elementId)
+				.removeClass()
+				.addClass(effect + ' animated')
+				.one(
+						'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+						function() {
+							$(this).removeClass();
+						});
+	};
+
+	$(document)
+			.ready(
+					function() {
+						var year = new Date().getFullYear();
+						$("#footer_text")
+								.html(
+										year
+												+ " <a href='https://en.wikipedia.org/wiki/Bydgoszcz' target='_blank'>Bydgoszcz</a>, Poland");
+						var anim = $('.js--animations').val();
+						Anim('#logo', 'fadeInDown');
+						Anim('#motto', 'flipInX'); // rubberBand
+						Anim('.wrap_section', 'flipInX'); // rubberBand
+						Anim('footer', 'fadeInUp'); // rubberBand
+					});
+</script>
+
 </html>
+
