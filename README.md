@@ -1,2 +1,1 @@
-# upswingops.github.io
-UpswingOps webpage
+[Simple initial UpswingOps webpage](http://upswingops.github.io)
