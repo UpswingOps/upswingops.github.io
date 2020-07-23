@@ -68,31 +68,34 @@
   -->
 
 <script>
-	function Anim(elementId, effect) {
-		$(elementId)
-				.removeClass()
-				.addClass(effect + ' animated')
-				.one(
-						'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-						function() {
-							$(this).removeClass();
-						});
-	};
-
-	$(document)
-			.ready(
+	
+var _version= '20200723-1';
+	
+function Anim(elementId, effect) {
+	$(elementId)
+			.removeClass()
+			.addClass(effect + ' animated')
+			.one(
+					'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
 					function() {
-						var year = new Date().getFullYear();
-						$("#footer_text")
-								.html(
-										year
-												+ " <a href='https://en.wikipedia.org/wiki/Bydgoszcz' target='_blank'>Bydgoszcz</a><a href='webcams.html' target='_blank'>,</a>" <a href='bcard.html' target='_blank'>Poland</a>");
-						var anim = $('.js--animations').val();
-						Anim('#logo', 'fadeIn');
-						Anim('#motto', 'fadeIn'); // rubberBand
-						Anim('.wrap_section', 'fadeIn'); // rubberBand
-						Anim('footer', 'fadeIn'); // rubberBand
+						$(this).removeClass();
 					});
+};
+
+$(document)
+		.ready(
+				function() {
+					var year = new Date().getFullYear();
+					$("#footer_text")
+							.html(
+									year
+											+ " <a href='https://en.wikipedia.org/wiki/Bydgoszcz' target='_blank'>Bydgoszcz</a><a href='webcams.html' target='_blank'>,</a>" <a href='bcard.html' target='_blank'>Poland</a>");
+					var anim = $('.js--animations').val();
+					Anim('#logo', 'fadeIn');
+					Anim('#motto', 'fadeIn'); // rubberBand
+					Anim('.wrap_section', 'fadeIn'); // rubberBand
+					Anim('footer', 'fadeIn'); // rubberBand
+				});
 </script>
 
 </html>
